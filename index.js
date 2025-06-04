@@ -1,6 +1,7 @@
 const dadosCardControleMedicamentos = {
     titulo: 'Controle de Medicamentos',
     imagem: './assets/controle-de-medicamentos.png',
+    gif: 'https://i.imgur.com/SDgwx8m.gif',
     urlRepositorio: 'https://github.com/academiadoprogramador-fullstack/controle-de-medicamentos-2025',
     stack: [
         'https://skillicons.dev/icons?i=html&theme=light',
@@ -13,8 +14,9 @@ const dadosCardControleMedicamentos = {
 
 const dadosCardGestaoEquipamentos = {
     titulo: 'Gestão de Equipamentos',
-    urlRepositorio: 'https://github.com/academiadoprogramador-fullstack/gestao-de-equipamentos-2025',
     imagem: './assets/gestao-de-equipamentos.png',
+    gif: '',
+    urlRepositorio: 'https://github.com/academiadoprogramador-fullstack/gestao-de-equipamentos-2025',
     stack: [
         'https://skillicons.dev/icons?i=html&theme=light',
         'https://skillicons.dev/icons?i=css&theme=light',
@@ -68,12 +70,19 @@ function selecionarSegundoCard() {
     carregarDadosCardAtual();
 }
 
+function abrirModalProjeto() {
+    document.getElementById('portfolioModalLabel').textContent = cardSelecionado.titulo;
+    document.getElementById('portfolioModalImage').src = cardSelecionado.gif;
+}
+
 function main() {
     const btnSelecionarPrimeiroCard = document.getElementById("btnSelecionarPrimeiroCard");
     const btnSelecionarSegundoCard = document.getElementById("btnSelecionarSegundoCard");
+    const btnVerProjeto = document.getElementById("btnVerProjeto")
 
     btnSelecionarPrimeiroCard.addEventListener('click', selecionarPrimeiroCard);
     btnSelecionarSegundoCard.addEventListener('click', selecionarSegundoCard);
+    btnVerProjeto.addEventListener('click', abrirModalProjeto);
 
     selecionarPrimeiroCard();
 };
